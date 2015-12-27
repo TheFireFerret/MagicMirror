@@ -1,0 +1,93 @@
+html {
+    color: white;
+    font-size: 1em;
+    line-height: 1.4;
+    background: black;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+div.time {
+    float: left;
+    font-size: 160px;
+    margin-left: 20px;
+    margin-top: -15px;
+}
+
+div.date {
+    float: right;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: -10px;
+}
+
+div.day {
+    float: right;
+    text-align: right;
+    font-size:70px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+div.container{
+    font-size: 40px;
+    font-family: Helvetica, serif;
+}
+
+div.weather{
+    position: absolute;
+    /*width: 100%;*/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+div.news{
+    position: absolute;
+    top: 20%;
+    margin-left: 20px;
+}
+
+div.events{
+    position: absolute;
+    top: 20%;
+    right: 0;
+    margin-right: 20px;
+}
+
+div.tasks{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 20px;
+}
