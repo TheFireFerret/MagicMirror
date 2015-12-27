@@ -4,9 +4,9 @@ function getDate() {
 
     var date = new Date();
 
-    document.getElementById("time").innerHTML = date.toLocaleTimeString('en-GB', {hour: '2-digit', minute:'2-digit' });
+    document.getElementById("time").innerHTML = date.toLocaleTimeString('en-GB', {hour: '2-digit', minute:'2-digit'});
     document.getElementById("day").innerHTML = date.toLocaleDateString('en-US', {weekday: 'long'})
-    document.getElementById("date").innerHTML = date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
+    document.getElementById("date").innerHTML = date.toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric'});
 
     var t = setTimeout(getDate, 500);
 }
