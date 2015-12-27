@@ -7,13 +7,17 @@ if (!$con)
 
 mysql_select_db("db", $con);
 
-$sql="DELETE FROM tasks where id = '$_POST[id]'";
+$sql="UPDATE tasks SET
+name = '$_POST[name]',
+t_desc = '$_POST[desc]',
+due = '$_POST[due]'
+where id = '$_POST[id]'";
 
 if (!mysql_query($sql,$con))
   {
   die('Error: ' . mysql_error());
   }
-echo "1 record removed";
+echo "1 record updated?";
 
 mysql_close($con);
 header('location:tasks.php');

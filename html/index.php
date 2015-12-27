@@ -8,7 +8,7 @@
   <meta http-equiv="refresh" content="1800" />
   <!--refresh page every 30 minutes-->
 
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src = "main.js"></script>
 
 </head>
