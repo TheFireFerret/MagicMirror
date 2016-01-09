@@ -42,7 +42,7 @@
     (
       function() {
         var params = {rssmikle_url: "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
-        rssmikle_frame_width: "400",rssmikle_frame_height: "950",frame_height_by_article: "0",rssmikle_target: "_blank",
+        rssmikle_frame_width: "400",rssmikle_frame_height: "900",frame_height_by_article: "0",rssmikle_target: "_blank",
         rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "20",rssmikle_border: "off",responsive: "off",
         rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "off",autoscroll: "on",
         scrolldirection: "up",scrollstep: "8",mcspeed: "20",sort: "Off",rssmikle_title: "off",rssmikle_title_sentence: "",
