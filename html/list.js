@@ -59,9 +59,14 @@
 
     var $ul = $tasks.find('ul');
     var frag = document.createDocumentFragment();
+    var counter = 0;
     taskData.forEach(function (task) {
+      // gets the 5 oldest to do list items from wunderlist API
+      if (counter >= 8) {
+        return;
+      }
       var $li = $('<li>' + task.title + '</li>');
-
+      counter++;
       // var $li = $('<li><a rel="' + task.id + '" href="#task-' + task.id+ ' ">' + task.title + '</a></li>');
       frag.appendChild($li[0]);
     });
