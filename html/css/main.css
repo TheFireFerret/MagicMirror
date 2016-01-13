@@ -1,19 +1,20 @@
 /* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+Base styles: opinionated defaults
+========================================================================== */
 
 html {
-    color: white;
-    font-size: 1em;
-    line-height: 1.4;
-    background: black;
+  color: white;
+  /*font-size: 1em;*/
+  /*line-height: 1.4;*/
+  background: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
+* Remove the gap between audio, canvas, iframes,
+* images, videos and the bottom of their containers:
+* https://github.com/h5bp/html5-boilerplate/issues/440
+*/
 
 audio,
 canvas,
@@ -21,68 +22,79 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+  vertical-align: middle;
+}
+
+.hidden {
+    display: none;
 }
 
 div.time {
-    float: left;
-    font-size: 150px;
+  float: left;
+  margin-left: 20px;
+  font-size: 200px;
+  font-weight: 500;
 }
 
 div.date {
-    float: right;
-    text-align: right;
-    /*margin-top: 30px;*/
+  float: right;
+  text-align: right;
+  margin-right: 20px;
 }
 
 div.day {
-    float: right;
-    text-align: right;
-    font-size:65px;
-    /*margin-right: 20px;*/
-    margin-top: 25px;
-
+  float: right;
+  text-align: right;
+  font-size:65px;
+  margin-top: 25px;
+  margin-right: 20px;
 }
 
 div.container{
-    font-size: 40px;
-    font-family: Helvetica, serif;
+  font-size: 48px;
+  vertical-align: center;
 }
 
 div.weather{
-    position: absolute;
-    /*width: 100%;*/
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  /*width: 100%;*/
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 div.news{
-    position: absolute;
-    top: 290px;
-    width: 45%;
+  position: absolute;
+  top: 300px;
+  width: 45%;
 }
 
 div.events{
-    position: absolute;
-    top: 290px;
-    width: 45%;
-    right: 0;
-    height:
+ // position: absolute;
+  //top: 300px;
+  //width: 45%;
+  //right: 0;
+font-size: 30px;
 }
 
-div.tasks{
-    position: absolute;
-    top: 50%;
-    width: 45%;
-    right: 0;
+div.taskdisp{
+  position: absolute;
+  top: 1000px;
+  width: 400px;
+  right: 0;
+  /*left: 60%*/
+  font-size: 25px;
+}
+
+.tasks{
+  list-style-type: square;
 }
 
 div.line{
-    position: relative;
-    top:170px;
-    width: 100%;
-    height: 2px;
-    background: #FFFFFF;
-    border:0px solid #FFFFFF;
+  position: relative;
+  top:160px;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+  border:0px solid #FFFFFF;
 }
