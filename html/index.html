@@ -5,14 +5,13 @@
   <title>Magic Mirror</title>
   <meta name="description" content="">
 
-  <!-- <meta http-equiv="refresh" content="1800" /> -->
+  <meta http-equiv="refresh" content="1800" />
   <!--refresh page every 30 minutes-->
 
   <link rel="stylesheet" href="css/main.css">
-  <script src = "main.js"></script>
+  <script src = "js/main.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-
 </head>
 
 <body onload="getDate()">
@@ -30,10 +29,11 @@
 
   <!--Weather from forecast.io widget-->
   <div class="weather">
-    <iframe style="-webkit-filter: invert(100%)" id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%"
+    <iframe style="-webkit-filter: invert(100%); filter: invert(100%)" id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%"
     src="http://forecast.io/embed/#lat=30.4248&lon=-97.8441&name=Austin"> </iframe>
   </div>
 
+  <!-- News rss ticker -->
   <div class="news">
     <!--http://feed.mikle.com-->
     <!-- start feedwind code -->
@@ -60,72 +60,58 @@
     </script>
   </div>
 
+  <!-- Google calendar events from cal.html -->
   <div class="events" id="events">
-
+    <div id="first-cal" class="googlecal">Loading...</div>
+    <div id="second-cal" class="googlecal hidden">Calendar...</div>
   </div>
 
   <div class="taskdisp" id="taskdisp">
-    <div id="first" class="wunderful">WOW</div>
-    <div id="second" class="wunderful hidden">COOL</div>
-
-    <!-- <div id="list" class="wow">list</div>
-    <div id="two">two</div> -->
+    <div id="first-list" class="wunderful">Loading...</div>
+    <div id="second-list" class="wunderful hidden">Wunderlist...</div>
   </div>
 
-
+  <!-- JS to swap two wunderlist divs so that they don't flash when loading -->
+  <!-- and also refresh the calendar list and weather and rss -->
   <script type="text/javascript">
-  (function titleSwap() {
+
+  (function wunderlistSwap() {
     $('.wunderful').not('.hidden').delay(2000).fadeOut(0, function () {
       var $me = $(this);
-      $('.wunderful.hidden').removeClass('.hidden').hide().fadeIn(0,                     function () {
+      $('.wunderful.hidden').removeClass('.hidden').hide().fadeIn(0, function () {
         $(this).removeClass('hidden');
         $me.addClass('hidden');
-        $.get('list.html', function(data) {
-          $me.html(data);
+        // $.get('list.html', function(data) {
+        //   $me.html(data);
+        // });
+        $.ajax({
+          async: false,
+          type: 'GET',
+          url: 'list.html',
+          success: function(data) {
+            $me.html(data);
+          }
         });
-        titleSwap();
+        wunderlistSwap();
       });
     });
   })();
 
-  (function wow() {
-     $.get('cal.html', function(data) {
-       $('#events').html(data);
-     });
+  (function calLoad() {
+    setTimeout(calLoad, 60000);
+    $.get('cal.html', function(data) {
+      $('#events').html(data);
+    });
   })();
 
-  // var one = 1;
-  // var two = 0;
-  // function startRefreshOne() {
-  //   setTimeout(startRefreshOne,5000);
-  //   if (one == 1) { //time to show
-  // $.get('list.html', function(data) {
-  //   $('#first').html(data);
-  // });
-  //       document.getElementById('first').style.display = "block";
-  //       one = 0;
-  //   } else {
-  //     document.getElementById('first').style.display = "none";
-  //     one = 1;
-  //   }
-  // }
-
-  // function startRefreshTwo() {
-  //   setTimeout(startRefreshTwo,5000);
-  //   if (two == 1) { //time to show
-  //     $.get('list.html', function(data) {
-  //       $('#second').html(data);
-  //     });
-  //       document.getElementById('second').style.display = "block";
-  //       two = 0;
-  //   } else {
-  //     document.getElementById('first').style.display = "none";
-  //     two = 1;
-  //   }
-  // }
+  // (function weatherLoad() {
+  //   setTimeout(weatherLoad, 60000);
+  //   document.getElementById('forecast_embed').contentWindow.location.reload();
+  //   // document.getElementById('forecast_embed').contentWindow.location.reload();
+  //
+  // })();
 
   </script>
-
 
 </body>
 </html>
